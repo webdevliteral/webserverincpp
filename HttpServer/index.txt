@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>C++ Webserver</title>
+    </head>
+    <body>
+        <h1>TEST HTML IN TXT DOC</h1>
+    </body>
+</html>
