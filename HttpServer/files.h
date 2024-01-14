@@ -9,19 +9,26 @@
 
 namespace Files
 {
+    struct FileInfo
+    {
+        std::string filename;
+        std::string extension;
+        std::string contents;
+    };
+
     class FileManager
     {
-        public:
-            FileManager();
-            ~FileManager();
-            void RequestIndexFile();
-            void ReadFileContents();
-        private:
-            std::ifstream indexFile;
-            std::vector<std::string> GetFilesInDirectory();
-            void IdentifyIndexFile();
-            void FilterFilesByExtension(std::string &ext, std::vector<std::string> fileArray);
+    public:
+        FileManager();
+        ~FileManager();
+        FileInfo RequestIndexFile();
+        FileInfo ReadFileContents(std::string filename, std::string extension);
 
+    private:
+        FileInfo indexFile;
+        std::vector<std::string> GetFilesInDirectory();
+        void IdentifyIndexFile();
+        void FilterFilesByExtension(std::string &ext, std::vector<std::string> fileArray);
     };
 }
 #endif
